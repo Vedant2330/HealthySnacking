@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | MANJU FOODS</title>
+  <meta name="description" content="Shop millet noodles, pasta, snacks, cookies, makhana and premixes from MANJU FOODS." />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: "#151512",
+            cream: "#f7f3e9",
+            pistachio: "#7b9a66",
+            beige: "#dbc8a9",
+            gold: "#c6a96a"
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">MANJU FOODS<span>Healthy Bhi Tasty Bhi</span></a>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="shop.html">Shop</a>
+        <a href="offers.html">Offers</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cart-link" href="cart.html" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="9" cy="20" r="1"></circle>
+          <circle cx="18" cy="20" r="1"></circle>
+          <path d="M3 3h2l2.2 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+        </svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-menu" data-mobile-menu aria-label="Mobile Navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="shop.html">Shop</a>
+      <a href="offers.html">Offers</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="page-banner">
+      <div class="container">
+        <div class="banner-card glass-card">
+          <span class="eyebrow">Shop All</span>
+          <h1>Millet Based Product Collection</h1>
+          <p>Discover clean-label snacks and pantry essentials across all MANJU FOODS categories.</p>
+          <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Shop</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark pt-0">
+      <div class="container">
+        <div class="shop-toolbar">
+          <p class="shop-result" id="shopResultCount">0 products</p>
+          <a class="btn btn-secondary" href="offers.html">View Combo Offers</a>
+        </div>
+
+        <div class="filter-pills" aria-label="Category filters">
+          <button class="pill pill-active" data-category-filter="all">All</button>
+          <button class="pill" data-category-filter="millet-noodles">Millet Noodles</button>
+          <button class="pill" data-category-filter="millet-pasta">Millet Pasta</button>
+          <button class="pill" data-category-filter="healthy-snacks">Healthy Snacks</button>
+          <button class="pill" data-category-filter="khakhra">Khakhra</button>
+          <button class="pill" data-category-filter="cookies">Cookies</button>
+          <button class="pill" data-category-filter="roasted-makhana">Roasted Makhana</button>
+          <button class="pill" data-category-filter="pancake-mix">Pancake Mix</button>
+          <button class="pill" data-category-filter="instant-premix">Instant Premix</button>
+        </div>
+
+        <div id="shopProducts" class="product-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h4>About MANJU FOODS</h4>
+        <p>Healthy Bhi Tasty Bhi with millet-forward food innovation.</p>
+        <p><strong>Contact:</strong> 8983778293</p>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html">Millet Noodles</a></li>
+          <li><a href="shop.html">Millet Pasta</a></li>
+          <li><a href="shop.html">Roasted Makhana</a></li>
+          <li><a href="shop.html">Instant Premix</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">© <span data-year></span> MANJU FOODS. All rights reserved.</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" role="img" aria-label="pancake product">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3ecdf"/>
+      <stop offset="1" stop-color="#ded0b8"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="130" y="80" width="300" height="250" rx="24" fill="#7e9b6c"/>
+  <circle cx="220" cy="190" r="34" fill="#d5bc90"/>
+  <circle cx="280" cy="170" r="30" fill="#c2a06a"/>
+  <circle cx="340" cy="200" r="36" fill="#b59661"/>
+  <circle cx="250" cy="240" r="24" fill="#d8c296"/>
+  <circle cx="320" cy="245" r="26" fill="#c7a877"/>
+  <text x="280" y="365" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="28" fill="#2b241c" font-weight="700">pancake</text>
+</svg>

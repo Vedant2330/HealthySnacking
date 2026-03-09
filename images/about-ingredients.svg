@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="Natural ingredients">
+  <rect width="800" height="520" rx="32" fill="#f4eee2"/>
+  <g>
+    <circle cx="230" cy="240" r="86" fill="#8da97a"/>
+    <circle cx="400" cy="240" r="86" fill="#d4bc90"/>
+    <circle cx="570" cy="240" r="86" fill="#bea06d"/>
+  </g>
+  <g fill="#fff8eb" opacity="0.72">
+    <circle cx="200" cy="210" r="14"/>
+    <circle cx="430" cy="205" r="12"/>
+    <circle cx="560" cy="220" r="15"/>
+  </g>
+  <text x="400" y="470" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="34" fill="#2f2a21" font-weight="700">Natural Ingredients</text>
+</svg>

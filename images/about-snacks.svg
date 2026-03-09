@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="Healthy snacks">
+  <rect width="800" height="520" rx="32" fill="#efe6d8"/>
+  <ellipse cx="400" cy="330" rx="250" ry="110" fill="#2a241d" opacity="0.16"/>
+  <rect x="220" y="140" width="360" height="220" rx="30" fill="#7f9b6d"/>
+  <g fill="#d2b989">
+    <circle cx="290" cy="230" r="30"/>
+    <circle cx="360" cy="210" r="28"/>
+    <circle cx="430" cy="240" r="32"/>
+    <circle cx="500" cy="220" r="29"/>
+  </g>
+  <g fill="#c2a26f">
+    <circle cx="320" cy="280" r="21"/>
+    <circle cx="390" cy="290" r="19"/>
+    <circle cx="470" cy="280" r="22"/>
+  </g>
+  <text x="400" y="470" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="34" fill="#2f2a21" font-weight="700">Healthy Snacks</text>
+</svg>

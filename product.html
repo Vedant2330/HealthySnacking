@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | MANJU FOODS</title>
+  <meta name="description" content="Product details for MANJU FOODS millet-based healthy snacks." />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: "#151512",
+            cream: "#f7f3e9",
+            pistachio: "#7b9a66",
+            beige: "#dbc8a9",
+            gold: "#c6a96a"
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">MANJU FOODS<span>Healthy Bhi Tasty Bhi</span></a>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="shop.html">Shop</a>
+        <a href="offers.html">Offers</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cart-link" href="cart.html" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="9" cy="20" r="1"></circle>
+          <circle cx="18" cy="20" r="1"></circle>
+          <path d="M3 3h2l2.2 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+        </svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-menu" data-mobile-menu aria-label="Mobile Navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="shop.html">Shop</a>
+      <a href="offers.html">Offers</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main class="site-main" id="productDetail">
+    <section class="page-banner">
+      <div class="container">
+        <div class="banner-card glass-card">
+          <span class="eyebrow">Product Details</span>
+          <h1>Premium Millet Snack</h1>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span>
+            <a href="shop.html">Shop</a><span>/</span>
+            <span id="productBreadcrumb">Product Name</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark pt-0">
+      <div class="container product-detail-grid">
+        <div class="product-detail-image">
+          <img id="productImage" src="images/product-seeds-mix.svg" alt="MANJU FOODS product" />
+        </div>
+
+        <div class="product-detail-content">
+          <span class="eyebrow">Healthy Bhi Tasty Bhi</span>
+          <h2 id="productName">Healthy Crunch Seeds Mix</h2>
+          <p class="product-detail-price" id="productPrice">₹229</p>
+          <p class="product-detail-copy" id="productDescription">
+            Crunchy, roasted and full of clean nutrition. This product balances taste and nourishment in every bite.
+          </p>
+
+          <div class="tag-group" id="productTags">
+            <span class="tag-chip">High Protein</span>
+            <span class="tag-chip">High Fibre</span>
+            <span class="tag-chip">No Palm Oil</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <div class="qty-control">
+              <button type="button" data-qty-minus="#productQty" aria-label="Decrease quantity">-</button>
+              <input id="productQty" type="number" value="1" min="1" />
+              <button type="button" data-qty-plus="#productQty" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="btn btn-primary" id="addProductToCart" data-add-to-cart="healthy-crunch-seeds-mix" data-qty-target="#productQty">Add to Cart</button>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-2">
+            <article class="glass-card p-4 rounded-2xl">
+              <h3 class="font-semibold mb-1">Roasted Not Fried</h3>
+              <p class="text-sm text-[#cfc2ae]">Light crunch with lower oil absorption for cleaner snacking.</p>
+            </article>
+            <article class="glass-card p-4 rounded-2xl">
+              <h3 class="font-semibold mb-1">Millet Forward Formula</h3>
+              <p class="text-sm text-[#cfc2ae]">Ancient grains blended with modern flavor profiles.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h4>About MANJU FOODS</h4>
+        <p>Luxury organic snack experiences inspired by Indian grains.</p>
+        <p><strong>Contact:</strong> 8983778293</p>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html">Millet Noodles</a></li>
+          <li><a href="shop.html">Healthy Snacks</a></li>
+          <li><a href="shop.html">Pancake Mix</a></li>
+          <li><a href="shop.html">Instant Premix</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">© <span data-year></span> MANJU FOODS. All rights reserved.</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

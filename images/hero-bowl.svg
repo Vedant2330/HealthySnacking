@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-label="Healthy millet snack bowl">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4efe4"/>
+      <stop offset="1" stop-color="#d8c8ae"/>
+    </linearGradient>
+    <linearGradient id="bowl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d9d6f"/>
+      <stop offset="1" stop-color="#567248"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="650" rx="44" fill="url(#bg)"/>
+  <g opacity="0.2" fill="#8f7f66">
+    <circle cx="80" cy="90" r="18"/>
+    <circle cx="810" cy="110" r="16"/>
+    <circle cx="120" cy="560" r="14"/>
+    <circle cx="780" cy="560" r="20"/>
+  </g>
+  <ellipse cx="450" cy="390" rx="310" ry="180" fill="#201c16" opacity="0.15"/>
+  <ellipse cx="450" cy="360" rx="290" ry="160" fill="url(#bowl)"/>
+  <ellipse cx="450" cy="320" rx="250" ry="120" fill="#2f3a2b"/>
+  <g>
+    <circle cx="360" cy="260" r="42" fill="#d3b27a"/>
+    <circle cx="430" cy="230" r="38" fill="#9ab486"/>
+    <circle cx="500" cy="250" r="40" fill="#ceb78f"/>
+    <circle cx="560" cy="290" r="36" fill="#7f9b6d"/>
+    <circle cx="390" cy="310" r="30" fill="#bf9f68"/>
+    <circle cx="470" cy="300" r="32" fill="#a7bf95"/>
+    <circle cx="530" cy="330" r="28" fill="#d1ba8c"/>
+  </g>
+  <text x="450" y="580" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="36" fill="#2a241d" font-weight="700">Healthy Millet Bowl</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="Millets">
+  <rect width="800" height="520" rx="32" fill="#f1e8d9"/>
+  <g fill="#7c9868">
+    <path d="M150 420c26-70 26-172 0-240h36c25 69 25 170 0 240z"/>
+    <path d="M300 420c26-70 26-172 0-240h36c25 69 25 170 0 240z"/>
+    <path d="M450 420c26-70 26-172 0-240h36c25 69 25 170 0 240z"/>
+    <path d="M600 420c26-70 26-172 0-240h36c25 69 25 170 0 240z"/>
+  </g>
+  <g fill="#c9a86d">
+    <circle cx="170" cy="150" r="16"/><circle cx="170" cy="190" r="16"/><circle cx="170" cy="230" r="16"/>
+    <circle cx="320" cy="150" r="16"/><circle cx="320" cy="190" r="16"/><circle cx="320" cy="230" r="16"/>
+    <circle cx="470" cy="150" r="16"/><circle cx="470" cy="190" r="16"/><circle cx="470" cy="230" r="16"/>
+    <circle cx="620" cy="150" r="16"/><circle cx="620" cy="190" r="16"/><circle cx="620" cy="230" r="16"/>
+  </g>
+  <text x="400" y="475" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="34" fill="#2f2a21" font-weight="700">Millets</text>
+</svg>

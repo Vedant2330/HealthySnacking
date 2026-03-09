@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MANJU FOODS | Healthy Bhi Tasty Bhi</title>
+  <meta name="description" content="MANJU FOODS premium millet-based snacks. Healthy Bhi Tasty Bhi." />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: "#151512",
+            cream: "#f7f3e9",
+            pistachio: "#7b9a66",
+            beige: "#dbc8a9",
+            gold: "#c6a96a"
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">MANJU FOODS<span>Healthy Bhi Tasty Bhi</span></a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="offers.html">Offers</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="cart-link" href="cart.html" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="9" cy="20" r="1"></circle>
+          <circle cx="18" cy="20" r="1"></circle>
+          <path d="M3 3h2l2.2 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+        </svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" data-mobile-menu aria-label="Mobile Navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="offers.html">Offers</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="hero section-dark premium-hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Premium Millet Nutrition</span>
+          <h1>Healthy Snacking Reimagined</h1>
+          <p class="hero-subtext">Millet-based snacks crafted for modern lifestyles.</p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="shop.html">Shop Snacks</a>
+            <a class="btn btn-secondary" href="shop.html">Explore Products</a>
+          </div>
+        </div>
+
+        <div class="hero-image-box">
+          <img src="images/hero-bowl.svg" alt="Large bowl of healthy snacks" loading="lazy" />
+          <img src="images/floating-seed.svg" alt="Seed" class="floating-item one" loading="lazy" />
+          <img src="images/floating-grain.svg" alt="Millet grain" class="floating-item two" loading="lazy" />
+          <img src="images/floating-nut.svg" alt="Nut" class="floating-item three" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Explore Ranges</span>
+            <h2>Shop By Category</h2>
+            <p class="section-copy">Millet-first products thoughtfully crafted for quick meals and better daily snacking.</p>
+          </div>
+        </div>
+
+        <div class="category-grid">
+          <a class="category-card" href="shop.html">
+            <img src="images/products/millet-noodles.jpg" alt="Millet Noodles" loading="lazy" />
+            <div class="category-content"><h3>Millet Noodles</h3></div>
+          </a>
+          <a class="category-card" href="shop.html">
+            <img src="images/product-pasta.jpg" alt="Millet Pasta" loading="lazy" />
+            <div class="category-content"><h3>Millet Pasta</h3></div>
+          </a>
+          <a class="category-card" href="shop.html">
+            <img src="images/products/seed-mix.jpg" alt="Healthy Snacks" loading="lazy" />
+            <div class="category-content"><h3>Healthy Snacks</h3></div>
+          </a>
+          <a class="category-card" href="shop.html">
+            <img src="images/products/khakhra.jpg" alt="Khakhra" loading="lazy" />
+            <div class="category-content"><h3>Khakhra</h3></div>
+          </a>
+          <a class="category-card" href="shop.html">
+            <img src="images/products/cookies.jpg" alt="Cookies" loading="lazy" />
+            <div class="category-content"><h3>Cookies</h3></div>
+          </a>
+          <a class="category-card" href="shop.html">
+            <img src="images/products/makhana.jpg" alt="Roasted Makhana" loading="lazy" />
+            <div class="category-content"><h3>Roasted Makhana</h3></div>
+          </a>
+          <a class="category-card" href="shop.html">
+            <img src="images/products/pancake-mix.jpg" alt="Pancake Mix" loading="lazy" />
+            <div class="category-content"><h3>Pancake Mix</h3></div>
+          </a>
+          <a class="category-card" href="shop.html">
+            <img src="images/products/seed-mix.jpg" alt="Seed Mix" loading="lazy" />
+            <div class="category-content"><h3>Seed Mix</h3></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Why Choose Manju Foods</span>
+            <h2>Made For Better Everyday Eating</h2>
+          </div>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <span class="benefit-icon"><img src="images/floating-nut.svg" alt="High Protein icon" loading="lazy" /></span>
+            <h3>High Protein</h3>
+            <p>Smart nutrient balance that helps you stay fuller for longer.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-icon"><img src="images/floating-grain.svg" alt="Roasted icon" loading="lazy" /></span>
+            <h3>Roasted Not Fried</h3>
+            <p>Cleaner crunch and lower oil compared with deep-fried snacks.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-icon"><img src="images/floating-seed.svg" alt="No Palm Oil icon" loading="lazy" /></span>
+            <h3>No Palm Oil</h3>
+            <p>Made with mindful ingredients and better fats for everyday use.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-icon"><img src="images/floating-grain.svg" alt="High Fibre icon" loading="lazy" /></span>
+            <h3>High Fibre</h3>
+            <p>Whole grains and seeds naturally support balanced digestion.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-icon"><img src="images/floating-seed.svg" alt="Millet Based icon" loading="lazy" /></span>
+            <h3>Millet Based</h3>
+            <p>Ancient Indian grains crafted for modern lifestyle nutrition.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Most Loved</span>
+            <h2>Best Sellers</h2>
+            <p class="section-copy">Our highest-rated products curated from customer favorites.</p>
+          </div>
+        </div>
+        <div id="bestSellerGrid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container story-grid">
+        <div class="story-image-wrap">
+          <img src="images/about-snacks.svg" alt="Manju Foods healthy millet snacks" loading="lazy" />
+        </div>
+
+        <article class="story-content">
+          <span class="eyebrow">About Manju Foods</span>
+          <h2>Millet Goodness, Crafted With Purpose</h2>
+          <p>
+            MANJU FOODS was built around one idea: better ingredients should never mean compromising on taste.
+            Our millet-based range is designed for modern routines, from breakfast prep to evening cravings.
+          </p>
+          <p>
+            Every product follows our clean-label philosophy with roasted formats, functional nutrition, and
+            consistent quality you can trust daily.
+          </p>
+          <a class="btn btn-primary" href="about.html">Read Brand Story</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Combo Offers</span>
+            <h2>Curated Packs For Better Value</h2>
+          </div>
+        </div>
+
+        <div class="combo-grid">
+          <article class="combo-card">
+            <img src="images/products/seed-mix.jpg" alt="Healthy Snack Combo" class="combo-image" loading="lazy" />
+            <div class="combo-content">
+              <h3>Healthy Snack Combo</h3>
+              <p>A wholesome mix of roasted crunchy snacks for all-day munching.</p>
+              <div class="offer-action-row">
+                <strong class="combo-price">₹711</strong>
+                <button class="btn btn-primary" data-add-to-cart="healthy-snack-combo">Add Combo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="combo-card">
+            <img src="images/products/millet-noodles.jpg" alt="Millet Breakfast Combo" class="combo-image" loading="lazy" />
+            <div class="combo-content">
+              <h3>Millet Breakfast Combo</h3>
+              <p>Breakfast and pantry staples to make healthy mornings quick.</p>
+              <div class="offer-action-row">
+                <strong class="combo-price">₹658</strong>
+                <button class="btn btn-primary" data-add-to-cart="millet-breakfast-combo">Add Combo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="combo-card">
+            <img src="images/products/dry-fruits.jpg" alt="Protein Snack Box" class="combo-image" loading="lazy" />
+            <div class="combo-content">
+              <h3>Protein Snack Box</h3>
+              <p>Protein-forward snacks to support busy workdays and travel.</p>
+              <div class="offer-action-row">
+                <strong class="combo-price">₹799</strong>
+                <button class="btn btn-primary" data-add-to-cart="protein-snack-box">Add Combo</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h4>About MANJU FOODS</h4>
+        <p>Premium millet snacks for modern India. Healthy Bhi Tasty Bhi.</p>
+        <p><strong>Contact:</strong> 8983778293</p>
+      </div>
+
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html">Millet Noodles</a></li>
+          <li><a href="shop.html">Healthy Snacks</a></li>
+          <li><a href="shop.html">Roasted Makhana</a></li>
+          <li><a href="shop.html">Cookies</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Social</h4>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">© <span data-year></span> MANJU FOODS. All rights reserved.</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
