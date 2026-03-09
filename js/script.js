@@ -2,6 +2,18 @@
 
 const STORAGE_KEY = "manju_foods_cart_v1";
 const PAGE_TRANSITION_MS = 360;
+const REVEAL_TARGET_SELECTORS = [
+  ".category-card",
+  ".product-card",
+  ".feature-card",
+  ".benefit-card",
+  ".combo-card",
+  ".offer-card",
+  ".section-title",
+  ".section-heading",
+];
+
+let revealObserver = null;
 
 const PRODUCTS = [
   {
@@ -224,6 +236,18 @@ function syncCartBadges() {
   });
 }
 
+function triggerCartBounce() {
+  document.querySelectorAll(".cart-link svg").forEach((icon) => {
+    icon.classList.remove("cart-bounce");
+    // Force reflow to restart animation when clicks happen rapidly.
+    void icon.offsetWidth;
+    icon.classList.add("cart-bounce");
+    icon.addEventListener("animationend", () => {
+      icon.classList.remove("cart-bounce");
+    }, { once: true });
+  });
+}
+
 function addItemToCart(item, qty = 1) {
   const cart = readCart();
   const found = cart.find((entry) => entry.id === item.id);
@@ -284,21 +308,71 @@ function bindGlobalAddToCart() {
       }
 
       addToCartById(itemId, qty);
+      triggerCartBounce();
       button.classList.add("is-adding");
       window.setTimeout(() => button.classList.remove("is-adding"), 380);
     });
   });
 }
 
+function refreshScrollReveal(scope = document) {
+  const root = scope && typeof scope.querySelectorAll === "function" ? scope : document;
+  const targets = root.querySelectorAll(REVEAL_TARGET_SELECTORS.join(","));
+
+  targets.forEach((element) => {
+    element.classList.add("reveal");
+    if (element.classList.contains("active")) return;
+
+    if (revealObserver) {
+      revealObserver.observe(element);
+      return;
+    }
+
+    element.classList.add("active");
+  });
+}
+
+function initScrollReveal() {
+  if (!("IntersectionObserver" in window)) {
+    refreshScrollReveal();
+    document.querySelectorAll(".reveal").forEach((element) => {
+      element.classList.add("active");
+    });
+    return;
+  }
+
+  revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("active");
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: "0px 0px -8% 0px",
+  });
+
+  refreshScrollReveal();
+}
+
 function initFloatingNavbar() {
   const header = document.querySelector(".site-header");
   if (!header) return;
+  const scrollThreshold = 30;
+  let ticking = false;
 
-  const onScroll = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  const syncHeaderState = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > scrollThreshold);
+    ticking = false;
   };
 
-  onScroll();
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(syncHeaderState);
+  };
+
+  syncHeaderState();
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
@@ -435,6 +509,7 @@ function initShopPage() {
     `).join("");
 
     bindGlobalAddToCart();
+    refreshScrollReveal(grid);
     const resultCount = document.querySelector("#shopResultCount");
     if (resultCount) resultCount.textContent = `${items.length} products`;
   };
@@ -673,6 +748,7 @@ function initOffersPage() {
   `).join("");
 
   bindGlobalAddToCart();
+  refreshScrollReveal(offersGrid);
 }
 
 function initHomeBestSellers() {
@@ -694,6 +770,7 @@ function initHomeBestSellers() {
   `).join("");
 
   bindGlobalAddToCart();
+  refreshScrollReveal(bestSellerGrid);
 }
 
 function initYear() {
@@ -707,6 +784,7 @@ function init() {
   initFloatingNavbar();
   syncCartBadges();
   initMobileMenu();
+  initScrollReveal();
   bindQuantityButtons();
   bindGlobalAddToCart();
   initHomeBestSellers();
