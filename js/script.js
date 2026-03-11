@@ -1,4 +1,4 @@
-/* MANJU FOODS - Shared storefront behavior */
+/* Healthy Snacking - Shared storefront behavior */
 
 const STORAGE_KEY = "manju_foods_cart_v1";
 const PAGE_TRANSITION_MS = 360;
@@ -34,102 +34,102 @@ let revealObserver = null;
 const PRODUCTS = [
   {
     id: "healthy-crunch-seeds-mix",
-    name: "Healthy Crunch Seeds Mix",
+    name: "Healthy Seed Mix",
     price: 229,
     image: "images/products/seed-mix.jpg",
     category: "healthy-snacks",
     rating: 4.8,
-    description: "Roasted seeds and millet blend with natural spices.",
+    description: "A demo snack product blending seeds, grains, and everyday crunch.",
     tags: ["High Protein", "High Fibre", "No Palm Oil"],
   },
   {
     id: "power-crunch-masala-dry-fruits",
-    name: "Power Crunch Masala Dry Fruits",
+    name: "Roasted Dry Fruit Mix",
     price: 309,
     image: "images/products/dry-fruits.jpg",
     category: "healthy-snacks",
     rating: 4.7,
-    description: "Bold masala dry fruits packed with protein-rich crunch.",
+    description: "A premium-style dry fruit mix concept for snack and food brand catalogs.",
     tags: ["Roasted", "Millet Based", "Energy Boost"],
   },
   {
     id: "anjeer-nuts-pop-bites",
-    name: "Anjeer Nuts Pop Bites",
+    name: "Fruit & Nut Snack Bites",
     price: 329,
     image: "images/products/dry-fruits.jpg",
     category: "cookies",
     rating: 4.9,
-    description: "Naturally sweet fig and nut bites for smart snacking.",
+    description: "A modern bite-size snack concept with fruit, nuts, and on-the-go appeal.",
     tags: ["No Refined Sugar", "High Fibre", "No Palm Oil"],
   },
   {
     id: "nutri-crunch-bites",
-    name: "Nutri Crunch Bites",
+    name: "Crunchy Protein Bites",
     price: 329,
     image: "images/products/seed-mix.jpg",
     category: "healthy-snacks",
     rating: 4.7,
-    description: "Toasted millet clusters and nuts for daily cravings.",
+    description: "A demo protein snack product made to showcase premium packaging-friendly content.",
     tags: ["High Protein", "Roasted", "Travel Friendly"],
   },
   {
     id: "protein-date-nut-bites",
-    name: "Protein Date Nut Bites",
+    name: "Date & Nut Energy Bites",
     price: 299,
     image: "images/products/dry-fruits.jpg",
     category: "healthy-snacks",
     rating: 4.8,
-    description: "Date and nut laddus with wholesome millet flour.",
+    description: "A clean-label energy bite concept for wellness-led snack brands.",
     tags: ["Natural Sweetness", "High Protein", "No Palm Oil"],
   },
   {
     id: "bajra-noodles",
-    name: "Millet Noodles Masala",
+    name: "Millet Noodles",
     price: 189,
     image: "images/products/millet-noodles.jpg",
     category: "millet-noodles",
     rating: 4.6,
-    description: "Quick-cook bajra noodles with aromatic spice blend.",
+    description: "A pantry-friendly noodle product designed for modern healthy food brands.",
     tags: ["Millet Based", "No Maida", "Family Pack"],
   },
   {
     id: "millet-penne-pasta",
-    name: "Millet Penne Pasta",
+    name: "Millet Pasta",
     price: 209,
     image: "images/products/millet-noodles.jpg",
     category: "millet-pasta",
     rating: 4.6,
-    description: "Firm, wholesome millet pasta for healthy meals.",
+    description: "A pasta product concept that fits health-focused pantry collections.",
     tags: ["High Fibre", "No Maida", "Italian Style"],
   },
   {
     id: "jowar-khakhra",
-    name: "Jowar Khakhra Masala",
+    name: "Roasted Millet Crisps",
     price: 169,
     image: "images/products/khakhra.jpg",
     category: "khakhra",
     rating: 4.5,
-    description: "Crisp roasted khakhra with signature masala seasoning.",
+    description: "A crisp savory snack concept for brands selling light roasted munchies.",
     tags: ["Roasted", "Light Snack", "Tea Time"],
   },
   {
     id: "millet-cookies",
-    name: "Ragi Choco Millet Cookies",
+    name: "Millet Cookies",
     price: 199,
     image: "images/products/cookies.jpg",
     category: "cookies",
     rating: 4.7,
-    description: "Crunchy choco cookies made with nutrient-rich ragi.",
+    description: "A demo cookie product balancing indulgence, grains, and everyday snacking.",
     tags: ["Kids Favorite", "No Palm Oil", "Millet Based"],
   },
   {
     id: "peri-peri-makhana",
-    name: "Roasted Makhana Peri Peri",
+    name: "Roasted Makhana",
     price: 179,
     image: "images/products/makhana.jpg",
     category: "roasted-makhana",
     rating: 4.7,
-    description: "Foxnuts roasted to perfection with peri peri spice.",
+    description: "A roasted foxnut concept for clean, modern healthy snack assortments.",
     tags: ["Roasted Not Fried", "Low Calorie", "High Fibre"],
   },
   {
@@ -139,17 +139,17 @@ const PRODUCTS = [
     image: "images/products/pancake-mix.jpg",
     category: "pancake-mix",
     rating: 4.6,
-    description: "Instant batter mix for soft, fluffy millet pancakes.",
+    description: "A breakfast-ready mix concept that works well in premium pantry collections.",
     tags: ["Breakfast", "Millet Based", "Quick Prep"],
   },
   {
     id: "instant-upma-premix",
-    name: "Instant Millet Upma Premix",
+    name: "Savory Millet Premix",
     price: 159,
     image: "images/products/premix.jpg",
     category: "instant-premix",
     rating: 4.5,
-    description: "Ready-in-minutes upma premix with roasted grains.",
+    description: "A quick-prep savory premix concept for convenient meal and breakfast ranges.",
     tags: ["Instant", "No Preservatives", "Balanced Meal"],
   },
 ];
@@ -161,9 +161,9 @@ const OFFERS = [
     price: 711,
     image: "images/products/seed-mix.jpg",
     contains: [
-      "Healthy Crunch Seeds Mix",
-      "Anjeer Nuts Pop Bites",
-      "Power Crunch Masala Dry Fruits",
+      "Healthy Seed Mix",
+      "Fruit & Nut Snack Bites",
+      "Roasted Dry Fruit Mix",
     ],
   },
   {
@@ -173,9 +173,9 @@ const OFFERS = [
     image: "images/products/millet-noodles.jpg",
     contains: [
       "Millet Pancake Mix",
-      "Millet Penne Pasta",
-      "Millet Noodles Masala",
-      "Jowar Khakhra Masala",
+      "Millet Pasta",
+      "Millet Noodles",
+      "Roasted Millet Crisps",
     ],
   },
   {
@@ -184,10 +184,10 @@ const OFFERS = [
     price: 799,
     image: "images/products/dry-fruits.jpg",
     contains: [
-      "Protein Date Nut Bites",
-      "Nutri Crunch Bites",
-      "Roasted Makhana Peri Peri",
-      "Ragi Choco Millet Cookies",
+      "Date & Nut Energy Bites",
+      "Crunchy Protein Bites",
+      "Roasted Makhana",
+      "Millet Cookies",
     ],
   },
 ];
@@ -224,7 +224,7 @@ function getCartSubtotal(cart = readCart()) {
 function getCartSummary(cart = readCart(), coupon = "") {
   const subtotal = getCartSubtotal(cart);
   const shipping = subtotal > 599 || subtotal === 0 ? 0 : 49;
-  const couponCodes = { MANJU10: 0.1, HEALTHY15: 0.15, TASTY20: 0.2 };
+  const couponCodes = { DEMO10: 0.1, HEALTHY15: 0.15, TEMPLATE20: 0.2 };
   const couponDiscount = couponCodes[coupon] ? Math.round(subtotal * couponCodes[coupon]) : 0;
   const autoDiscount = subtotal > 0 ? Math.round(subtotal * 0.05) : 0;
   const total = Math.max(subtotal + shipping - couponDiscount - autoDiscount, 0);
@@ -333,7 +333,11 @@ function bindGlobalAddToCart() {
 
 function refreshScrollReveal(scope = document) {
   const root = scope && typeof scope.querySelectorAll === "function" ? scope : document;
-  const targets = root.querySelectorAll(REVEAL_TARGET_SELECTORS.join(","));
+  const targets = new Set(root.querySelectorAll(REVEAL_TARGET_SELECTORS.join(",")));
+
+  root.querySelectorAll(".reveal").forEach((element) => {
+    targets.add(element);
+  });
 
   targets.forEach((element) => {
     const siblingIndex = element.parentElement
@@ -720,7 +724,7 @@ function initCartPage() {
   if (couponInput && couponApply) {
     couponApply.addEventListener("click", () => {
       const code = couponInput.value.trim().toUpperCase();
-      const validCodes = ["MANJU10", "HEALTHY15", "TASTY20"];
+      const validCodes = ["DEMO10", "HEALTHY15", "TEMPLATE20"];
       if (!validCodes.includes(code)) {
         showToast("Invalid coupon code", "error");
         renderCartTotals();
@@ -771,7 +775,7 @@ function initCheckoutPage() {
   if (couponInput && couponApply) {
     couponApply.addEventListener("click", () => {
       const code = couponInput.value.trim().toUpperCase();
-      const validCodes = ["MANJU10", "HEALTHY15", "TASTY20"];
+      const validCodes = ["DEMO10", "HEALTHY15", "TEMPLATE20"];
       if (!validCodes.includes(code)) {
         activeCoupon = "";
         showToast("Invalid coupon code", "error");
