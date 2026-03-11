@@ -3,12 +3,28 @@
 const STORAGE_KEY = "manju_foods_cart_v1";
 const PAGE_TRANSITION_MS = 360;
 const REVEAL_TARGET_SELECTORS = [
+  ".page-banner .container",
+  ".section > .container",
   ".category-card",
   ".product-card",
   ".feature-card",
   ".benefit-card",
   ".combo-card",
   ".offer-card",
+  ".philosophy-card",
+  ".cart-item",
+  ".banner-card",
+  ".hero-copy > *",
+  ".hero-image-box",
+  ".story-content > *",
+  ".story-image-wrap",
+  ".about-copy",
+  ".product-detail-content > *",
+  ".product-detail-image",
+  ".summary-card",
+  ".form-card",
+  ".order-card",
+  ".footer-grid > div",
   ".section-title",
   ".section-heading",
 ];
@@ -320,14 +336,20 @@ function refreshScrollReveal(scope = document) {
   const targets = root.querySelectorAll(REVEAL_TARGET_SELECTORS.join(","));
 
   targets.forEach((element) => {
+    const siblingIndex = element.parentElement
+      ? Array.prototype.indexOf.call(element.parentElement.children, element)
+      : 0;
+    const revealDelay = Math.min(Math.max(siblingIndex, 0) * 55, 220);
+    element.style.setProperty("--reveal-delay", `${revealDelay}ms`);
     element.classList.add("reveal");
-    if (element.classList.contains("active")) return;
+    if (element.classList.contains("show")) return;
 
     if (revealObserver) {
       revealObserver.observe(element);
       return;
     }
 
+    element.classList.add("show");
     element.classList.add("active");
   });
 }
@@ -336,6 +358,7 @@ function initScrollReveal() {
   if (!("IntersectionObserver" in window)) {
     refreshScrollReveal();
     document.querySelectorAll(".reveal").forEach((element) => {
+      element.classList.add("show");
       element.classList.add("active");
     });
     return;
@@ -344,12 +367,13 @@ function initScrollReveal() {
   revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
+      entry.target.classList.add("show");
       entry.target.classList.add("active");
       observer.unobserve(entry.target);
     });
   }, {
-    threshold: 0.15,
-    rootMargin: "0px 0px -8% 0px",
+    threshold: 0.12,
+    rootMargin: "0px 0px -10% 0px",
   });
 
   refreshScrollReveal();
@@ -358,11 +382,31 @@ function initScrollReveal() {
 function initFloatingNavbar() {
   const header = document.querySelector(".site-header");
   if (!header) return;
+  const mobileBreakpoint = window.matchMedia("(max-width: 768px)");
   const scrollThreshold = 30;
+  const hideThreshold = 110;
+  const scrollDelta = 8;
+  let lastScrollY = window.scrollY;
   let ticking = false;
 
   const syncHeaderState = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > scrollThreshold);
+    const currentScrollY = window.scrollY;
+    header.classList.toggle("is-scrolled", currentScrollY > scrollThreshold);
+
+    if (mobileBreakpoint.matches) {
+      const isScrollingDown = currentScrollY > lastScrollY + scrollDelta;
+      const isScrollingUp = currentScrollY < lastScrollY - scrollDelta;
+
+      if (isScrollingDown && currentScrollY > hideThreshold) {
+        header.classList.add("is-hidden");
+      } else if (isScrollingUp || currentScrollY <= scrollThreshold) {
+        header.classList.remove("is-hidden");
+      }
+    } else {
+      header.classList.remove("is-hidden");
+    }
+
+    lastScrollY = currentScrollY;
     ticking = false;
   };
 
@@ -374,46 +418,75 @@ function initFloatingNavbar() {
 
   syncHeaderState();
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  if (typeof mobileBreakpoint.addEventListener === "function") {
+    mobileBreakpoint.addEventListener("change", syncHeaderState);
+  } else if (typeof mobileBreakpoint.addListener === "function") {
+    mobileBreakpoint.addListener(syncHeaderState);
+  }
 }
 
 function initMobileMenu() {
   const toggleBtn = document.querySelector("[data-menu-toggle]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
   const mobileBreakpoint = window.matchMedia("(max-width: 768px)");
+  const body = document.body;
 
   if (!toggleBtn || !mobileMenu) return;
 
+  const closeMenu = () => {
+    toggleBtn.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    body.classList.remove("menu-open");
+  };
+
+  const openMenu = () => {
+    toggleBtn.classList.add("is-open");
+    mobileMenu.classList.add("is-open");
+    toggleBtn.setAttribute("aria-expanded", "true");
+    body.classList.add("menu-open");
+  };
+
   const syncMenuState = () => {
     if (!mobileBreakpoint.matches) {
-      toggleBtn.classList.remove("is-open");
-      mobileMenu.classList.remove("is-open");
-      toggleBtn.setAttribute("aria-expanded", "false");
+      closeMenu();
       return;
     }
 
     const isOpen = mobileMenu.classList.contains("is-open");
     toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    body.classList.toggle("menu-open", isOpen);
   };
 
   toggleBtn.setAttribute("aria-expanded", "false");
 
   toggleBtn.addEventListener("click", () => {
     if (!mobileBreakpoint.matches) return;
-
-    mobileMenu.classList.toggle("is-open");
-    toggleBtn.classList.toggle("is-open");
-    toggleBtn.setAttribute(
-      "aria-expanded",
-      mobileMenu.classList.contains("is-open") ? "true" : "false"
-    );
+    if (mobileMenu.classList.contains("is-open")) {
+      closeMenu();
+      return;
+    }
+    openMenu();
   });
 
   mobileMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      toggleBtn.classList.remove("is-open");
-      mobileMenu.classList.remove("is-open");
-      toggleBtn.setAttribute("aria-expanded", "false");
+      closeMenu();
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!mobileBreakpoint.matches || !mobileMenu.classList.contains("is-open")) return;
+    const clickedToggle = event.target.closest("[data-menu-toggle]");
+    const clickedMenu = event.target.closest("[data-mobile-menu]");
+    if (clickedToggle || clickedMenu) return;
+    closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !mobileMenu.classList.contains("is-open")) return;
+    closeMenu();
   });
 
   if (typeof mobileBreakpoint.addEventListener === "function") {
@@ -564,6 +637,7 @@ function renderCartPage() {
       </div>
     `;
     renderCartTotals();
+    refreshScrollReveal(cartItemsContainer);
     return;
   }
 
@@ -609,6 +683,7 @@ function renderCartPage() {
   });
 
   renderCartTotals();
+  refreshScrollReveal(cartItemsContainer);
 }
 
 function renderCartTotals(coupon = "") {
@@ -676,6 +751,8 @@ function initCheckoutPage() {
       </div>
     `).join("");
   }
+
+  refreshScrollReveal(orderItems);
 
   const couponInput = document.querySelector("#checkoutCouponInput");
   const couponApply = document.querySelector("#checkoutCouponApply");
@@ -795,5 +872,12 @@ function init() {
   initOffersPage();
   initYear();
 }
+
+window.addEventListener("load", () => {
+  if (!window.matchMedia("(min-width: 1024px)").matches) return;
+  document.querySelectorAll(".hero-image-box .hero-overlay,.hero-image-box .hero-mask,.hero-image-box .hero-loader,.hero-image-box .reveal-bar").forEach((element) => {
+    element.style.display = "none";
+  });
+});
 
 document.addEventListener("DOMContentLoaded", init);
