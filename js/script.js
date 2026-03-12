@@ -371,6 +371,9 @@ function initScrollReveal() {
   revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
+      // Add staggered animation delay
+      const delay = entry.target.style.getPropertyValue("--reveal-delay") || "0ms";
+      entry.target.style.transitionDelay = delay;
       entry.target.classList.add("show");
       entry.target.classList.add("active");
       observer.unobserve(entry.target);
@@ -838,12 +841,19 @@ function initHomeBestSellers() {
 
   const bestSellers = PRODUCTS.slice(0, 5);
   bestSellerGrid.innerHTML = bestSellers.map((product) => `
-    <article class="product-card glass-card">
+    <article class="product-card glass-card reveal">
       <a href="product.html?id=${product.id}" class="product-image-wrap" aria-label="${product.name}">
         <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy" />
       </a>
       <div class="product-content">
+        <p class="product-category">${product.category.replace(/-/g, " ")}</p>
         <h3 class="product-title"><a href="product.html?id=${product.id}">${product.name}</a></h3>
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <div style="display: flex; gap: 0.2rem;">
+            ${Array(5).fill(0).map(() => `<svg width="14" height="14" viewBox="0 0 16 16" fill="#c6a96a" xmlns="http://www.w3.org/2000/svg"><path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z"/></svg>`).join('')}
+          </div>
+          <span style="font-size: 0.85rem; color: #6B6B6B;">${product.rating}</span>
+        </div>
         <p class="product-price">${formatINR(product.price)}</p>
         <button class="btn btn-primary" data-add-to-cart="${product.id}">Add to Cart</button>
       </div>

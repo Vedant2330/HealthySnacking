@@ -1,7 +1,7 @@
 /* ============================= */
 /* VARIABLES                    */
 /* ============================= */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap');
 :root { --bg-main: #F5F1E8; --bg-soft: #FAF7F2; --card: #FFFFFF; --green: #8FAF7B; --green-dark: #6E8F5F; --green-soft: #E8F0E3; --text-dark: #2E2E2E; --text-muted: #6B6B6B; --border: #E8E3D9; --shadow: 0 10px 30px rgba(0, 0, 0, 0.05); --charcoal-950: var(--bg-main); --charcoal-900: var(--bg-soft); --charcoal-850: var(--bg-soft); --charcoal-800: var(--bg-soft); --cream-100: var(--bg-soft); --cream-200: var(--bg-main); --beige-300: #dbc8a9; --beige-500: #b79a70; --green-300: var(--green); --green-500: var(--green); --green-700: var(--green-dark); --gold-400: #c6a96a; --text-light: var(--text-dark); --text-mid: var(--text-muted); --danger: #c85959; --radius-sm: 10px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 34px; --shadow-soft: var(--shadow); --shadow-card: var(--shadow); --glass-bg: var(--card); --glass-border: var(--border); --black: var(--bg-main); --charcoal: var(--bg-soft); --dark-card: var(--card); --premium-beige: #f2e8d7; --premium-cream: #fbf7ef; --premium-cream-deep: #f6eedf; --premium-green: #86a774; --premium-green-dark: #6f8f5f; --premium-text: #2c3326; --premium-muted: #64705f; --premium-border: #e7ddcc; --premium-shadow: 0 8px 25px rgba(0, 0, 0, 0.06); --section-soft-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03) 100%); --demo-banner-height: 44px; --navbar-offset: 72px; }
 
 /* ============================= */
@@ -922,4 +922,338 @@ button:not(.menu-toggle):not(.pill):not(.link-btn):active { transform: scale(0.9
   .cart-bounce,
   button { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+
+/* ============================= */
+/* PREMIUM D2C ENHANCEMENTS      */
+/* ============================= */
+
+/* Premium Typography */
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: -0.02em;
+}
+
+/* Premium Navbar */
+.site-header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(250, 247, 242, 0.7);
+  border-bottom: 1px solid rgba(232, 227, 217, 0.3);
+  transition: all 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(250, 247, 242, 0.85);
+  border-bottom-color: rgba(232, 227, 217, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Premium Button Enhancements */
+.btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7B9A66 0%, #6E8F5F 100%);
+  box-shadow: 0 8px 20px rgba(123, 154, 102, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6E8F5F 0%, #5d7a52 100%);
+  box-shadow: 0 12px 32px rgba(123, 154, 102, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(123, 154, 102, 0.08);
+  border: 1px solid rgba(123, 154, 102, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(123, 154, 102, 0.12);
+  border-color: rgba(123, 154, 102, 0.3);
+}
+
+/* Premium Card Styles */
+.product-card,
+.offer-card,
+.combo-card,
+.testimonial-card,
+.benefit-trust-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(232, 227, 217, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover,
+.offer-card:hover,
+.combo-card:hover,
+.testimonial-card:hover,
+.benefit-trust-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  border-color: rgba(123, 154, 102, 0.2);
+}
+
+/* Premium Image Zoom */
+.product-image,
+.offer-image,
+.combo-image,
+.instagram-item img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .product-image,
+.offer-card:hover .offer-image,
+.combo-card:hover .combo-image,
+.instagram-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Premium Section Depth */
+.section-soft {
+  background: linear-gradient(180deg, transparent 0%, rgba(123, 154, 102, 0.02) 100%);
+}
+
+.section-cream {
+  background: linear-gradient(135deg, #FBF8F0 0%, #FAF7F2 100%);
+}
+
+/* Premium Hero Section */
+.hero {
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5F1E8 50%, #FBF8F0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(123, 154, 102, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Premium Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Premium Testimonials */
+.testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-rating svg {
+  width: 16px;
+  height: 16px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Premium Instagram Grid */
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.instagram-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.instagram-item:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Premium Benefits Grid */
+.benefits-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-trust-card {
+  text-align: center;
+  padding: 1.75rem;
+}
+
+.benefit-trust-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: rgba(123, 154, 102, 0.1);
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  transition: all 0.3s ease;
+}
+
+.benefit-trust-card:hover .benefit-trust-icon {
+  background: rgba(123, 154, 102, 0.15);
+  transform: scale(1.1);
+}
+
+/* Premium Story Section */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.story-image-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.story-content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.story-content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+/* Premium Hero Trust Line */
+.hero-trust-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
+.hero-trust-line svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+}
+
+/* Premium Responsive */
+@media (max-width: 1024px) {
+  .hero-grid,
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .benefits-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 0 3rem;
+  }
+
+  .hero::before {
+    width: 300px;
+    height: 300px;
+    right: -50px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .benefits-trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .hero-copy h1 {
+    font-size: 1.75rem;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Text Center Utility */
+.text-center {
+  text-align: center;
+}
+
+.text-center .section-heading {
+  justify-content: center;
+}
+
+.text-center .section-heading > div {
+  text-align: center;
 }

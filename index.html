@@ -24,6 +24,12 @@
     };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="home-premium-top">
@@ -71,52 +77,75 @@
     <section class="hero section-dark premium-hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Demo Website Template</span>
-          <h1>Healthy Snacking</h1>
-          <p class="hero-subtext">Modern ecommerce website template<br />designed for snack &amp; food brands.</p>
-          <p class="hero-support">Showcase products beautifully, build brand presence, and accept online orders easily.</p>
+          <span class="eyebrow">Premium Healthy Snacking</span>
+          <h1>Snack Better.<br>Live Better.</h1>
+          <p class="hero-subtext">Clean ingredients. High protein. No artificial junk.</p>
+          <p class="hero-support">Thoughtfully crafted snacks that fuel your day without compromise.</p>
 
           <div class="hero-buttons">
-            <a class="btn btn-primary" href="shop.html">View Demo Products</a>
-            <a class="btn btn-secondary" href="#imagine-brand">Explore Layout</a>
+            <a class="btn btn-primary" href="shop.html">
+              <span>Shop Bestsellers</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn btn-secondary" href="#imagine-brand">Explore Snacks</a>
           </div>
 
-          <div class="hero-features" aria-label="Template highlights">
-            <div class="trust-card">
-              <span>🌿</span>
-              <p>Natural Ingredients</p>
-            </div>
-            <div class="trust-card">
-              <span>🚫</span>
-              <p>No Palm Oil</p>
-            </div>
-            <div class="trust-card">
-              <span>🔥</span>
-              <p>Roasted Not Fried</p>
-            </div>
-            <div class="trust-card">
-              <span>💪</span>
-              <p>High Protein</p>
-            </div>
+          <div class="hero-trust-line">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            <p>Loved by thousands of health-conscious snackers</p>
           </div>
         </div>
 
         <div class="hero-image-box">
           <img src="images/hero-bowl.png" alt="Large bowl of healthy snacks" loading="lazy" />
-          <img src="images/floating-seed.svg" alt="Seed" class="floating-item one" loading="lazy" />
-          <img src="images/floating-grain.svg" alt="Millet grain" class="floating-item two" loading="lazy" />
-          <img src="images/floating-nut.svg" alt="Nut" class="floating-item three" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <section class="section section-soft imagine-section" id="imagine-brand">
+    <section class="section section-soft benefits-trust-section" id="imagine-brand">
       <div class="container">
-        <article class="imagine-card glass-card">
-          <span class="eyebrow">Template Preview</span>
-          <h2>Imagine Your Brand Here</h2>
-          <p>Your products displayed beautifully, customers browsing your full range, and orders coming directly from your website.</p>
-        </article>
+        <div class="benefits-trust-grid">
+          <div class="benefit-trust-card">
+            <div class="benefit-trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>100% Natural Ingredients</h3>
+            <p>No artificial preservatives or additives</p>
+          </div>
+          <div class="benefit-trust-card">
+            <div class="benefit-trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>No Artificial Sugar</h3>
+            <p>Naturally sweetened for guilt-free snacking</p>
+          </div>
+          <div class="benefit-trust-card">
+            <div class="benefit-trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 10V3L4 14H11L11 21L20 10L13 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>High Protein Snacks</h3>
+            <p>Fuel your body with every bite</p>
+          </div>
+          <div class="benefit-trust-card">
+            <div class="benefit-trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>Fresh snacks delivered to your door</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -206,12 +235,12 @@
       </div>
     </section>
 
-    <section class="section section-cream">
+    <section class="section section-cream bestsellers-section">
       <div class="container reveal">
         <div class="section-heading section-title">
           <div>
             <span class="eyebrow">Most Loved</span>
-            <h2>Best Sellers</h2>
+            <h2>🔥 Bestsellers</h2>
             <p class="section-copy">Our highest-rated products curated from customer favorites.</p>
           </div>
         </div>
@@ -219,25 +248,136 @@
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section section-soft brand-story-section">
       <div class="container story-grid reveal">
         <div class="story-image-wrap">
-          <img src="images/about-snacks.svg" alt="Healthy snack brand website concept" loading="lazy" />
+          <img src="images/about-snacks.svg" alt="Our brand story" loading="lazy" />
         </div>
 
         <article class="story-content">
-          <span class="eyebrow">About This Demo</span>
-          <h2>Healthy Snacking Is A Flexible Demo Storefront</h2>
+          <span class="eyebrow">Our Story</span>
+          <h2>Snacking Reimagined for Modern Living</h2>
           <p>
-            This concept shows how a snack or food brand can present products with premium visuals, clear navigation,
-            and a polished shopping experience from homepage to checkout.
+            We started Healthy Snacking with a simple mission: make snacks that are actually enjoyable while staying nutritious. No compromises, no artificial ingredients—just real food that tastes great.
           </p>
           <p>
-            Use it to imagine your own catalog, collections, bundle offers, and direct-to-consumer ordering flow in a
-            modern, conversion-friendly format.
+            Every product is thoughtfully crafted with clean ingredients, high protein, and bold flavors. We believe healthy eating should be delicious, convenient, and accessible to everyone.
           </p>
-          <a class="btn btn-primary" href="about.html">View Template Story</a>
+          <a class="btn btn-primary" href="about.html">
+            <span>Read Our Story</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </article>
+      </div>
+    </section>
+
+    <section class="section section-cream testimonials-section">
+      <div class="container reveal">
+        <div class="section-heading section-title">
+          <div>
+            <span class="eyebrow">Customer Reviews</span>
+            <h2>What Our Customers Say</h2>
+          </div>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="testimonial-text">"These snacks are a game-changer! Finally found something healthy that actually tastes amazing. The millet noodles are my go-to lunch now."</p>
+            <p class="testimonial-author">— Priya Sharma</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="testimonial-text">"Love the transparency in ingredients. No hidden junk, just real food. The protein bites keep me full between meetings."</p>
+            <p class="testimonial-author">— Rahul Mehta</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1.5L9.5 6H14L10.5 9L12 13.5L8 10.5L4 13.5L5.5 9L2 6H6.5L8 1.5Z" fill="#c6a96a" stroke="#c6a96a" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="testimonial-text">"Best healthy snack brand I've tried. The roasted makhana is addictive, and I don't feel guilty snacking anymore!"</p>
+            <p class="testimonial-author">— Ananya Desai</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft instagram-section">
+      <div class="container reveal">
+        <div class="section-heading section-title text-center">
+          <div>
+            <span class="eyebrow">Follow Us</span>
+            <h2>@healthysnacking</h2>
+            <p class="section-copy">Join our community of health-conscious snackers</p>
+          </div>
+        </div>
+        <div class="instagram-grid">
+          <div class="instagram-item">
+            <img src="images/products/seed-mix.jpg" alt="Instagram post" loading="lazy" />
+          </div>
+          <div class="instagram-item">
+            <img src="images/products/millet-noodles.jpg" alt="Instagram post" loading="lazy" />
+          </div>
+          <div class="instagram-item">
+            <img src="images/products/cookies.jpg" alt="Instagram post" loading="lazy" />
+          </div>
+          <div class="instagram-item">
+            <img src="images/products/makhana.jpg" alt="Instagram post" loading="lazy" />
+          </div>
+          <div class="instagram-item">
+            <img src="images/products/pancake-mix.jpg" alt="Instagram post" loading="lazy" />
+          </div>
+          <div class="instagram-item">
+            <img src="images/products/dry-fruits.jpg" alt="Instagram post" loading="lazy" />
+          </div>
+        </div>
       </div>
     </section>
 
