@@ -27,7 +27,13 @@ const REVEAL_TARGET_SELECTORS = [
   ".footer-grid > div",
   ".section-title",
   ".section-heading",
+  ".testimonial-card",
+  ".benefit-trust-card",
+  ".instagram-item",
 ];
+
+/* Animation variant classes that the IntersectionObserver also observes */
+const REVEAL_VARIANT_CLASSES = ["reveal", "reveal-fade", "reveal-left", "reveal-right", "reveal-scale"];
 
 let revealObserver = null;
 
@@ -335,8 +341,11 @@ function refreshScrollReveal(scope = document) {
   const root = scope && typeof scope.querySelectorAll === "function" ? scope : document;
   const targets = new Set(root.querySelectorAll(REVEAL_TARGET_SELECTORS.join(",")));
 
-  root.querySelectorAll(".reveal").forEach((element) => {
-    targets.add(element);
+  /* Collect elements with any reveal variant class */
+  REVEAL_VARIANT_CLASSES.forEach((cls) => {
+    root.querySelectorAll(`.${cls}`).forEach((element) => {
+      targets.add(element);
+    });
   });
 
   targets.forEach((element) => {
@@ -345,7 +354,11 @@ function refreshScrollReveal(scope = document) {
       : 0;
     const revealDelay = Math.min(Math.max(siblingIndex, 0) * 55, 220);
     element.style.setProperty("--reveal-delay", `${revealDelay}ms`);
-    element.classList.add("reveal");
+
+    /* Only add base .reveal class if no variant class is present */
+    const hasVariant = REVEAL_VARIANT_CLASSES.some((cls) => element.classList.contains(cls));
+    if (!hasVariant) element.classList.add("reveal");
+
     if (element.classList.contains("show")) return;
 
     if (revealObserver) {
@@ -361,9 +374,11 @@ function refreshScrollReveal(scope = document) {
 function initScrollReveal() {
   if (!("IntersectionObserver" in window)) {
     refreshScrollReveal();
-    document.querySelectorAll(".reveal").forEach((element) => {
-      element.classList.add("show");
-      element.classList.add("active");
+    REVEAL_VARIANT_CLASSES.forEach((cls) => {
+      document.querySelectorAll(`.${cls}`).forEach((element) => {
+        element.classList.add("show");
+        element.classList.add("active");
+      });
     });
     return;
   }
